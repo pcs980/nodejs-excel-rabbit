@@ -1,6 +1,6 @@
 'use strict';
 
-const { uploadMiddleware } = require('../utils/multer');
+const { uploadMiddleware } = require('../middlewares/multer');
 const {
   getAllStudents,
   getStudentById,
