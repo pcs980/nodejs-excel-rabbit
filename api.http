@@ -1,0 +1,28 @@
+### Cadastrar alunos
+POST http://localhost:3000/api/v1/students
+Content-Type: multipart/form-data
+Accept: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel
+
+< ./planilha_alunos.xlsx
+
+### Obter alunos
+GET http://localhost:3000/students
+
+### Alterar aluno
+PUT http://localhost:3000/api/v1/students/1
+Content-Type: application/json
+
+{
+  "nome": "",
+  "estadoCivil": "",
+  "email": "",
+  "cpf": "",
+  "rg": "",
+  "dataNascimento": "",
+  "sexo": ""
+}
+
+
+### Excluir aluno
+DELETE http://localhost:3000/api/v1/students/1
+Accept: application/json
