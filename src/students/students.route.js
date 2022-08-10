@@ -1,5 +1,6 @@
 'use strict';
 
+const { uploadMiddleware } = require('../utils/multer');
 const {
   getAllStudents,
   getStudentById,
@@ -9,7 +10,7 @@ const {
 
 module.exports = (app) => {
   app.get('/students/', getAllStudents);
+  app.post('/students/upload', uploadMiddleware.single('file'), uploadStudents);
   app.get('/students/:id', getStudentById);
-  app.post('/students', uploadStudents);
   app.put('/students/:id', updateStudentById);
 };
