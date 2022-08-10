@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 
-const app = require('./app');
+const { app } = require('./app');
 const { APP_PORT } = require('./utils/config');
 
 // Create upload folder
