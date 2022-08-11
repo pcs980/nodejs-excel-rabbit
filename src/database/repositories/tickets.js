@@ -20,10 +20,8 @@ function get(code) {
 }
 
 function update(ticket) {
-  tickets = [
-    ...tickets.filter((t) => t.code !== ticket.code),
-    ticket,
-  ];
+  tickets = [...tickets.filter((t) => t.code !== ticket.code), ticket];
+  return ticket;
 }
 
 module.exports = {

@@ -1,16 +1,15 @@
 'use strict';
 
-const { getTickets } = require('./tickets.service');
+const ticketService = require('./tickets.service');
 
 async function getAllTickets(_, res) {
-  console.log('reach controller');
-  const result = await getTickets();
+  const result = await ticketService.getTickets();
   res.status(200).json(result);
 }
 
 async function getTicketById(req, res) {
   const { id } = req.params;
-  const result = await getTickets(id);
+  const result = await ticketService.getTickets(id);
   if (result) {
     res.status(200).json(result);
   } else {

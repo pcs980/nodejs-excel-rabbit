@@ -3,7 +3,6 @@
 const ticketRepository = require('../database/repositories/tickets');
 
 async function getTickets(code) {
-  console.log('reach service :(((((');
   return ticketRepository.get(code);
 }
 
@@ -12,9 +11,9 @@ async function saveTicket(ticket) {
 }
 
 async function updateTicketStatus({ code, status, error }) {
-  const ticket = ticketRepository.get(code);
+  const ticket = await ticketRepository.get(code);
   if (!ticket) {
-    throw new ('Error updating ticket: not found');
+    throw new Error('Error updating ticket: not found');
   }
   return ticketRepository.update({
     ...ticket,

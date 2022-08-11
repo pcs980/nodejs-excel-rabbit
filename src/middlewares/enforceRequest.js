@@ -4,12 +4,10 @@
  * @param {express.Response} res
  * @param {express.NextFunction} next
  */
-async function checkIdParam (req, res, next) {
+async function checkIdParam(req, res, next) {
   const { id } = req.params;
   if (!id) {
-    return res
-      .status(400)
-      .json({ error: 'Error: invalid student id' });
+    return res.status(400).json({ error: 'Error: invalid student id' });
   }
   next();
 }
@@ -20,11 +18,9 @@ async function checkIdParam (req, res, next) {
  * @param {express.Response} res
  * @param {express.NextFunction} next
  */
-async function checkRequestBody (req, res, next) {
+async function checkRequestBody(req, res, next) {
   if (!req.body || Object.values(req.body).length === 0) {
-    return res
-      .status(400)
-      .json({ error: 'Error: empty body' });
+    return res.status(400).json({ error: 'Error: empty body' });
   }
   next();
 }

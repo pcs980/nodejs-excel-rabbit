@@ -1,8 +1,8 @@
-function isValidEmail (email) {
+function isValidEmail(email) {
   if (email == null) return false;
   const re = /[^\s@]+@[^\s@]+\.[^\s@]+/;
   return re.test(email);
-};
+}
 
 function isValidStudent(student) {
   if (!student.name) {
