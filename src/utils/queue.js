@@ -1,4 +1,5 @@
 const amqplib = require('amqplib');
+
 const { QUEUE_URL } = require('./config');
 const { QUEUE_NEW_STUDENTS, QUEUE_TICKET_STATUS } = require('./constants');
 
@@ -43,7 +44,7 @@ function consumeQueue(queue, callback) {
         console.error(
           'Error consuming message',
           message.content.toString(),
-          error.message
+          error.message,
         );
       }
     }

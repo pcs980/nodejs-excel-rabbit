@@ -10,11 +10,11 @@ function generateTicket() {
   const randomArray = [
     ...Array.from(
       { length: 2 },
-      () => letters[Math.floor(Math.random() * letters.length)]
+      () => letters[Math.floor(Math.random() * letters.length)],
     ),
     ...Array.from(
       { length: 4 },
-      () => numbers[Math.floor(Math.random() * numbers.length)]
+      () => numbers[Math.floor(Math.random() * numbers.length)],
     ),
   ];
   return randomArray.join('');
