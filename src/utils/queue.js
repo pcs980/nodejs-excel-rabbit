@@ -1,9 +1,6 @@
 const amqplib = require('amqplib');
 const { QUEUE_URL } = require('./config');
-const {
-  QUEUE_NEW_STUDENTS,
-  QUEUE_TICKET_STATUS,
-} = require('./constants');
+const { QUEUE_NEW_STUDENTS, QUEUE_TICKET_STATUS } = require('./constants');
 
 const studentQueue = QUEUE_NEW_STUDENTS;
 const ticketQueue = QUEUE_TICKET_STATUS;
@@ -29,11 +26,11 @@ async function connectQueue() {
 }
 
 function publishStudent(student) {
-  queueChannel.sendToQueue(studentQueue, Buffer.from(JSON.stringify(student)));
+  queueChannel?.sendToQueue(studentQueue, Buffer.from(JSON.stringify(student)));
 }
 
 function publishTicket(code) {
-  queueChannel.sendToQueue(ticketQueue, Buffer.from(JSON.stringify(code)));
+  queueChannel?.sendToQueue(ticketQueue, Buffer.from(JSON.stringify(code)));
 }
 
 function consumeQueue(queue, callback) {
@@ -43,7 +40,11 @@ function consumeQueue(queue, callback) {
         await callback(JSON.parse(message.content.toString()));
         queueChannel.ack(message);
       } catch (error) {
-        console.error('Error consuming message', message.content.toString(), error.message);
+        console.error(
+          'Error consuming message',
+          message.content.toString(),
+          error.message
+        );
       }
     }
   });
