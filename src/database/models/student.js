@@ -6,7 +6,7 @@ class Student {
     this.name = student.name;
     this.email = student.email;
     this.maritalStatus = student.maritalStatus;
-    this.idNumber = student.idNumber;
+    this.taxpayerNumber = student.taxpayerNumber;
     this.identity = student.identity;
     this.birthDate = student.birthDate;
     this.gender = student.gender;

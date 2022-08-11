@@ -7,7 +7,7 @@ function save(student) {
   return newStudent;
 }
 
-function get({ field, value }) {
+function get({ field, value } = {}) {
   if (field) {
     const indexOf = students.findIndex((s) => s[field] === value);
     if (indexOf >= 0) {
@@ -20,10 +20,7 @@ function get({ field, value }) {
 
 function update(request) {
   const student = new Student(request);
-  students = [
-    ...students.filter((s) => s.id !== student.id),
-    student,
-  ];
+  students = [...students.filter((s) => s.id !== student.id), student];
   return student;
 }
 

@@ -2,5 +2,9 @@ module.exports = {
   collectCoverage: true,
   silent: false,
   verbose: true,
-  setupFiles: ['<rootDir>/test/setup.js']
+  resetMocks: true,
+  clearMocks: true,
+  testEnvironment: 'node',
+  testMatch: ['<rootDir>/test/**/*.test.js'],
+  setupFilesAfterEnv: ['<rootDir>/test/setup.js'],
 };
