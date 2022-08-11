@@ -1,8 +1,20 @@
-function isEmpty(value) {
-  if (!value) {
-    return true;
+function isValidEmail (email) {
+  if (email == null) return false;
+  const re = /[^\s@]+@[^\s@]+\.[^\s@]+/;
+  return re.test(email);
+};
+
+function isValidStudent(student) {
+  if (!student.name) {
+    return false;
   }
-  return String(value).trim().length === 0;
+  if (student.email && !isValidEmail(student.email)) {
+    return false;
+  }
+  if (student.birthDate && !isValidDate(student.birthDate)) {
+    return false;
+  }
+  return true;
 }
 
 function isValidDate(date) {
@@ -10,6 +22,5 @@ function isValidDate(date) {
 }
 
 module.exports = {
-  isEmpty,
-  isValidDate,
+  isValidStudent,
 };

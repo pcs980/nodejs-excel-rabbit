@@ -6,4 +6,6 @@ const TICKET_STATUS = {
 
 module.exports = {
   TICKET_STATUS,
+  QUEUE_NEW_STUDENTS: 'proz-new-students',
+  QUEUE_TICKET_STATUS: 'proz-update-ticket',
 };
