@@ -4,7 +4,7 @@ WORKDIR /usr/src/app
 
 COPY . .
 
-RUN npm ci --omit=dev
+RUN npm ci --omit=dev --ignore-scripts
 
 EXPOSE 3000
 

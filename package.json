@@ -12,11 +12,22 @@
   "keywords": [
     "proz",
     "alunos",
+    "queue",
     "teste"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/paulocs/proz-alunos"
+  },
+  "bugs": {
+    "url": "https://gitlab.com/paulocs/proz-alunos/-/issues",
+    "email": "paulocsmg@gmail.com"
+  },
   "scripts": {
     "dev": "nodemon --watch src src/index.js",
-    "debug": "nodemon --inspect --watch src src/index.js",
+    "docker:build": "docker build -t proz-alunos .",
+    "docker:queue": "docker run --name rabbitmq -d -p 8080:15672 -p 5672:5672 -p 25676:25676 rabbitmq:3.10.7-management",
+    "docker:start": "docker run --name proz-alunos -d -p 3000:3000 -e QUEUE_URL='amqp://guest:guest@172.17.0.2:5672' proz-alunos",
     "lint": "eslint src && prettier src --check",
     "lint:fix": "eslint src --fix && prettier src --write",
     "prepare": "husky install",
