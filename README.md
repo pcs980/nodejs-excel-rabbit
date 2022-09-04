@@ -12,7 +12,7 @@
 | Nome do Aluno | Estado Civil | Email | CPF | RG | Data de Nascimento | Sexo |
 |---------------|:------------:|-------|-----|----|:------------------:|:----:|
 | Ana Júlia     |CASADO(A)  |anajulia@gmail.com   |888.888.888-88|22.222.222-2|08/29/2021|Feminino|
-| João Bezerra  |SOLTEIRO(A)|joaobezerra@gmail.com|999.999.999-99|11.111.111-1|25/27/1946|Masculino|
+| João Bezerra  |SOLTEIRO(A)|joaobezerra@gmail.com|999.999.999-99|11.111.111-1|05/27/1946|Masculino|
 | Val Silva     |CASADO(A)  |valsilva@gmail.com   |777.777.777-77|33.333.333-3|12/10/1984|Feminino|
 
 ### O que vamos avaliar no teste
